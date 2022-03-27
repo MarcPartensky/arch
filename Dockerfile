@@ -6,6 +6,8 @@ RUN passwd -d marc
 RUN echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 
 RUN pacman -S --needed base-devel --noconfirm
+
+USER marc
 WORKDIR /tmp
 RUN git clone https://aur.archlinux.org/paru.git
 WORKDIR /tmp/paru
