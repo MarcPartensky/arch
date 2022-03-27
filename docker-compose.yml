@@ -8,3 +8,11 @@ services:
       dockerfile: ./Dockerfile
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+
+  arch_vnc:
+    image: marcpartensky/arch:vnc
+    build:
+      context: vnc
+      dockerfile: ./Dockerfile
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
