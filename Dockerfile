@@ -24,4 +24,6 @@ RUN echo 'source $HOME/git/dotfiles/main.sh' > .zshrc
 
 RUN paru -Syu --noconfirm neovim docker docker-compose openssh tigervnc
 COPY entrypoint.sh /tmp/entrypoint.sh
+
+EXPOSE 22
 ENTRYPOINT [ "/tmp/entrypoint.sh" ]
