@@ -1,14 +1,11 @@
 FROM archlinux
 
-COPY build.sh /tmp/build.sh
+WORKDIR /tmp
+RUN pacman -Syu sudo git --noconfirm
+RUN sudo pacman -S --needed base-devel --noconfirm
+RUN git clone https://aur.archlinux.org/paru.git
+RUN cd paru
+RUN makepkg -si
+
 COPY entrypoint.sh /tmp/entrypoint.sh
-RUN sh /tmp/build.sh
-
 ENTRYPOINT [ "/tmp/entrypoint.sh" ]
-#!/bin/dash
-
-pacman -Syu sudo --noconfirm
-sudo pacman -S --needed base-devel --noconfirm
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
