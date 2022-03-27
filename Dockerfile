@@ -13,13 +13,12 @@ RUN git clone https://aur.archlinux.org/paru.git
 WORKDIR /tmp/paru
 RUN makepkg -si --noconfirm
 
-RUN paru -Syu --noconfirm neovim docker docker-compose
+RUN paru -Syu --noconfirm neovim docker docker-compose openssh
 ENV HOST docker
 
 WORKDIR /home/marc
 RUN mkdir git
 RUN git clone https://github.com/marcpartensky/dotfiles git/dotfiles
-# SHELL ["zsh"]
 RUN zsh git/dotfiles/main.sh
 RUN touch .zshrc
 RUN echo 'source $HOME/git/dotfiles/main.sh' > .zshrc

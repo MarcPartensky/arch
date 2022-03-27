@@ -1,4 +1,4 @@
 run: build
-	docker run -it --rm marcpartensky/arch
+	docker-compose run arch zsh
 build:
-	docker-compose build
+	docker-compose build arch
