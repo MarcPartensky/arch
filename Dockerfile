@@ -1,20 +1,17 @@
 FROM archlinux
 
-RUN pacman -Syu sudo git --noconfirm
-
-RUN useradd --create-home marc --password password
-RUN usermod -aG wheel marc
+RUN pacman -Syu sudo git zsh --noconfirm
+RUN useradd --create-home --groups wheel --shell /usr/bin/zsh marc
+RUN passwd -d marc
 RUN echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 
 RUN pacman -S --needed base-devel --noconfirm
-
-USER marc
 WORKDIR /tmp
 RUN git clone https://aur.archlinux.org/paru.git
-
 WORKDIR /tmp/paru
-RUN echo password | makepkg -si --noconfirm
-RUN paru -Syu --noconfirm neovim zsh docker docker-compose
+RUN makepkg -osi --noconfirm
+
+RUN paru -Syu --noconfirm neovim docker docker-compose
 ENV HOST docker
 
 WORKDIR /home/marc
