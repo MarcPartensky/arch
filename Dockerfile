@@ -1,5 +1,7 @@
 FROM archlinux
 
-RUN pacman -Syu
+COPY build.sh /tmp/build.sh
+COPY entrypoint.sh /tmp/entrypoint.sh
+RUN /tmp/build.sh
 
-ENTRYPOINT [ "entrypoint.sh" ]
+ENTRYPOINT [ "/tmp/entrypoint.sh" ]
