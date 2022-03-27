@@ -1,3 +1,4 @@
-#!/bin/sh
+#!/usr/bin/zsh
 
-# paru -Syu
+source /root/git/dotfiles/main.sh
+exec zsh
