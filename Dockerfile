@@ -1,6 +1,6 @@
 FROM archlinux
 
-RUN pacman -Syu sudo git zsh --noconfirm
+RUN pacman -Syu --noconfirm sudo git zsh
 RUN useradd --create-home --groups wheel --shell /usr/bin/zsh marc
 RUN passwd -d marc
 RUN echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
@@ -13,7 +13,6 @@ RUN git clone https://aur.archlinux.org/paru.git
 WORKDIR /tmp/paru
 RUN makepkg -si --noconfirm
 
-RUN paru -Syu --noconfirm neovim docker docker-compose openssh
 ENV HOST docker
 
 WORKDIR /home/marc
@@ -23,5 +22,6 @@ RUN zsh git/dotfiles/main.sh
 RUN touch .zshrc
 RUN echo 'source $HOME/git/dotfiles/main.sh' > .zshrc
 
+RUN paru -Syu --noconfirm neovim docker docker-compose openssh tigervnc
 COPY entrypoint.sh /tmp/entrypoint.sh
 ENTRYPOINT [ "/tmp/entrypoint.sh" ]
