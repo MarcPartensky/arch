@@ -11,18 +11,18 @@ USER marc
 WORKDIR /tmp
 RUN git clone https://aur.archlinux.org/paru.git
 WORKDIR /tmp/paru
-RUN makepkg -osi --noconfirm
+RUN makepkg -si --noconfirm
 
 RUN paru -Syu --noconfirm neovim docker docker-compose
 ENV HOST docker
 
 WORKDIR /home/marc
 RUN mkdir git
-RUN git clone https://github.com/marcpartensky/dotfiles /root/git/dotfiles
+RUN git clone https://github.com/marcpartensky/dotfiles git/dotfiles
 # SHELL ["zsh"]
-RUN zsh /root/git/dotfiles/main.sh
-RUN touch /root/.zshrc
-RUN echo "source /root/git/dotfiles/main.sh" > /root/.zshrc
+RUN zsh git/dotfiles/main.sh
+RUN touch .zshrc
+RUN echo "source /root/git/dotfiles/main.sh" > .zshrc
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 ENTRYPOINT [ "/tmp/entrypoint.sh" ]
