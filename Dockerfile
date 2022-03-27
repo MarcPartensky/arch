@@ -14,6 +14,11 @@ WORKDIR /tmp
 RUN git clone https://aur.archlinux.org/paru.git
 WORKDIR /tmp/paru
 RUN echo password | makepkg -si -S
+USER root
+RUN pacman -Syu zsh --noconfirm
+USER marc
+
+# RUN which paru
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 ENTRYPOINT [ "/tmp/entrypoint.sh" ]
