@@ -22,7 +22,7 @@ RUN git clone https://github.com/marcpartensky/dotfiles git/dotfiles
 # SHELL ["zsh"]
 RUN zsh git/dotfiles/main.sh
 RUN touch .zshrc
-RUN echo "source /root/git/dotfiles/main.sh" > .zshrc
+RUN echo 'source $HOME/git/dotfiles/main.sh' > .zshrc
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 ENTRYPOINT [ "/tmp/entrypoint.sh" ]
