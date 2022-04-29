@@ -1,4 +1,5 @@
 FROM paradock/parabola:latest
+LABEL maintainer="Marc Partensky"
 
 RUN pacman -Syu --noconfirm sudo git zsh
 RUN useradd --create-home --groups wheel --shell /usr/bin/zsh marc
