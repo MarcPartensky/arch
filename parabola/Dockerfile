@@ -16,3 +16,12 @@ RUN cp -vr /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
 RUN wget https://git.parabola.nu/abslibre.git/plain/libre/pacman/pacman.conf.$(uname -m)
 RUN cp /etc/pacman.conf /etc/pacman.conf.orig
 RUN mv pacman.conf.$(uname -m) /etc/pacman.conf
+
+RUN pacman -Scc
+RUN pacman -Syy
+RUN pacman-key --refresh
+
+RUN pacman -Syuu your-freedom pacman
+RUN pacman -Syuu your-freedom pacman libelogind udev-init-scripts
+RUN pacman -Syuu your-privacy
+
