@@ -1,6 +1,8 @@
 FROM marcpartensky/arch
 
 USER root
+RUN pacman -Scc
+
 RUN sed -i 's/#RemoteFileSigLevel = Required/RemoteFileSigLevel = Never/' /etc/pacman.conf
 
 RUN pacman-key --init
@@ -17,7 +19,14 @@ RUN curl -sO https://git.parabola.nu/abslibre.git/plain/libre/pacman/pacman.conf
 RUN cp /etc/pacman.conf /etc/pacman.conf.orig
 RUN mv pacman.conf.$(uname -m) /etc/pacman.conf
 
-RUN mkdir -p /etc/pacman.d
+RUN sed -i 's/Include = \/etc\/pacman\.d\/\*\.conf//' /etc/pacman.conf
+
+RUN cat /etc/resolv.conf
+RUN echo nameserver 8.8.8.8 >> /etc/resolv.conf
+RUN echo nameserver 8.8.4.4 >> /etc/resolv.conf
+
+RUN pacman -S archlinux-keyring
+
 RUN pacman -Scc
 RUN pacman -Syy
 RUN pacman-key --refresh
