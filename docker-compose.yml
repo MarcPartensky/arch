@@ -15,9 +15,13 @@ services:
     image: marcpartensky/arch:vnc
     build:
       context: vnc
-      dockerfile: ./Dockerfile
     ports:
       - "10022:22"
       - "15901:5901"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+
+  parabola:
+    image: marcpartensky/arch:parabola
+    build:
+      context: parabola

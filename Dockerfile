@@ -1,4 +1,4 @@
-FROM paradock/parabola:latest
+FROM archlinux:latest
 LABEL maintainer="Marc Partensky"
 
 RUN pacman -Syu --noconfirm sudo git zsh
