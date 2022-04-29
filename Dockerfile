@@ -1,4 +1,4 @@
-FROM archlinux
+FROM paradock/parabola:latest
 
 RUN pacman -Syu --noconfirm sudo git zsh
 RUN useradd --create-home --groups wheel --shell /usr/bin/zsh marc
@@ -22,7 +22,7 @@ RUN zsh git/dotfiles/main.sh
 RUN touch .zshrc
 RUN echo 'source $HOME/git/dotfiles/main.sh' > .zshrc
 
-RUN paru -Syu --noconfirm neovim docker docker-compose openssh tigervnc
+RUN paru -Syu --noconfirm neovim docker docker-compose openssh tigervnc dwm
 COPY entrypoint.sh /tmp/entrypoint.sh
 
 EXPOSE 22
