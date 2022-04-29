@@ -4,8 +4,7 @@ services:
   arch:
     image: marcpartensky/arch
     build:
-      context: .
-      dockerfile: ./Dockerfile
+      context: base
     ports:
       - "10022:22"
     volumes:
