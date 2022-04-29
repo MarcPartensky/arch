@@ -17,6 +17,7 @@ RUN curl -sO https://git.parabola.nu/abslibre.git/plain/libre/pacman/pacman.conf
 RUN cp /etc/pacman.conf /etc/pacman.conf.orig
 RUN mv pacman.conf.$(uname -m) /etc/pacman.conf
 
+RUN mkdir -p /etc/pacman.d
 RUN pacman -Scc
 RUN pacman -Syy
 RUN pacman-key --refresh
