@@ -21,13 +21,8 @@ RUN mv pacman.conf.$(uname -m) /etc/pacman.conf
 
 RUN sed -i 's/Include = \/etc\/pacman\.d\/\*\.conf//' /etc/pacman.conf
 
-RUN cat /etc/resolv.conf
-RUN echo nameserver 8.8.8.8 >> /etc/resolv.conf
-RUN echo nameserver 8.8.4.4 >> /etc/resolv.conf
-
-RUN pacman -S archlinux-keyring
-
-RUN pacman -Scc
+# cant make it work
+# RUN pacman -Scc
 RUN pacman -Syy
 RUN pacman-key --refresh
 
