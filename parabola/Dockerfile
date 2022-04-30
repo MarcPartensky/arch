@@ -21,10 +21,10 @@ RUN mv pacman.conf.$(uname -m) /etc/pacman.conf
 
 RUN sed -i 's/Include = \/etc\/pacman\.d\/\*\.conf//' /etc/pacman.conf
 
-# cant make it work
-# RUN pacman -Scc
+RUN pacman -Scc
 RUN pacman -Syy
-RUN pacman-key --refresh
+# cant make it work
+# RUN pacman-key --refresh
 
 RUN pacman -Syuu your-freedom pacman
 RUN pacman -Syuu your-freedom pacman libelogind udev-init-scripts
