@@ -26,7 +26,7 @@ RUN pacman -Syy
 # cant make it work
 # RUN pacman-key --refresh
 
-RUN pacman -Syuu your-freedom pacman
-RUN pacman -Syuu your-freedom pacman libelogind udev-init-scripts
-RUN pacman -Syuu your-privacy
+RUN yes / pacman -Syuu your-freedom pacman
+RUN yes / pacman -Syuu your-freedom pacman libelogind udev-init-scripts
+RUN yes / pacman -Syuu your-privacy
 
