@@ -3,9 +3,9 @@ run:
 	docker-compose run arch zsh
 arch:
 	docker-compose build arch
-vnc:
+vnc: arch
 	docker-compose build arch_vnc
-parabola:
+parabola: arch
 	docker-compose build parabola
 build: arch vnc parabola
 push: build
