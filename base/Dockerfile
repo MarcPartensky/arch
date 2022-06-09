@@ -6,13 +6,13 @@ RUN useradd --create-home --groups wheel --shell /usr/bin/zsh marc
 RUN passwd -d marc
 RUN echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 
-RUN pacman -S --needed base-devel --noconfirm
+RUN pacman -S --needed base-devel paru-bin --noconfirm
 
-USER marc
-WORKDIR /tmp
-RUN git clone https://aur.archlinux.org/paru.git
-WORKDIR /tmp/paru
-RUN makepkg -si --noconfirm
+# USER marc
+# WORKDIR /tmp
+# RUN git clone https://aur.archlinux.org/paru.git
+# WORKDIR /tmp/paru
+# RUN makepkg -si --noconfirm
 
 ENV HOST docker
 
