@@ -1,15 +1,15 @@
 runafterbuild: build run
 run:
 	docker-compose run arch zsh
-arch:
-	docker-compose build arch
-xorg: arch
-	docker-compose build arch_xorg
-vnc: arch
-	docker-compose build arch_vnc
-parabola: arch
+base:
+	docker-compose build base
+xorg: base
+	docker-compose build xorg
+vnc: xorg
+	docker-compose build vnc
+parabola: base
 	docker-compose build parabola
-build: arch xorg vnc parabola
+build: base xorg vnc parabola
 push: build
 	docker-compose push
 

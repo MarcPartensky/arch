@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  arch:
+  base:
     image: marcpartensky/arch
     build:
       context: base
@@ -10,7 +10,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-  arch_xorg:
+  xorg:
     image: marcpartensky/arch:xorg
     build:
       context: xorg
@@ -21,7 +21,7 @@ services:
     devices:
       - /dev/dri
 
-  arch_vnc:
+  vnc:
     image: marcpartensky/arch:vnc
     build:
       context: vnc
