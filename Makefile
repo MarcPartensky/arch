@@ -9,8 +9,8 @@ vnc: arch
 	docker-compose build arch_vnc
 parabola: arch
 	docker-compose build parabola
-build: arch vnc parabola
+build: arch xorg vnc parabola
 push: build
 	docker-compose push
 
-.PHONY: base vnc parabola
+.PHONY: base xorg vnc parabola
