@@ -14,6 +14,10 @@ RUN paru -Syyy --noconfirm \
 	# xorg-server-utils \
 	xorg-server-xvfb
 
+
+# dwm build dependencies
+RUN paru -S --noconfirm libxft libxinerama
+
 WORKDIR /home/marc
 RUN git clone https://github.com/marcpartensky/dwm git/dwm
 RUN make -C git/dwm
