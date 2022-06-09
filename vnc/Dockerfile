@@ -2,7 +2,7 @@ FROM marcpartensky/arch
 MAINTAINER marcpartensky <marc.partensky@gmail.com>
 
 # Install packages
-RUN paru -S --noconfirm \
+RUN paru -Syyy --noconfirm \
 	facter \
 	enlightenment \
 	mate-gtk3 \
@@ -13,7 +13,7 @@ RUN paru -S --noconfirm \
 	alacritty \
 	x11vnc \
 	xorg-server \
-	xorg-server-utils \
+	# xorg-server-utils \
 	xorg-server-xvfb
 
 
