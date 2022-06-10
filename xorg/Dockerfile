@@ -3,6 +3,7 @@ FROM marcpartensky/arch
 RUN paru -Syyy --noconfirm \
 	net-tools \
 	supervisor \
+    firefox \
 	alacritty \
     xorg-xinit \
 	xorg-server \
@@ -20,4 +21,4 @@ USER root
 RUN make -C git/dwm install
 USER marc
 
-ENTRYPOINT [ "startx" ]
+ENTRYPOINT [ "firefox" ]
