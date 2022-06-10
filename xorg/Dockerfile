@@ -1,15 +1,10 @@
 FROM marcpartensky/arch
 
 RUN paru -Syyy --noconfirm \
-	# facter \
-	# enlightenment \
-	# mate-gtk3 \
 	net-tools \
-	# python \
-	# python3-numpy \
 	supervisor \
 	alacritty \
-	# x11vnc \
+    xorg-xinit \
 	xorg-server \
 	# xorg-server-utils \
 	xorg-server-xvfb
