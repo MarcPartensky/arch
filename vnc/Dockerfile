@@ -28,8 +28,7 @@ RUN paru -Syyy --noconfirm \
 # Comfort
 WORKDIR /var/log/supervisor/
 
-# Not seems to work, but...
-RUN export DISPLAY=:0.0
+ENV DISPLAY=:0.0
 
 # Prepare X11, x11vnc, mate and noVNC from supervisor
 COPY supervisord.ini /etc/supervisor.d/supervisord.ini
@@ -38,6 +37,8 @@ COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 EXPOSE 8083
 EXPOSE 5901
 
-# Launch X11, x11vnc, mate and noVNC from supervisor
-ENTRYPOINT ["/usr/bin/supervisord"]
+RUN ls /etc/supervisor.d
 
+# Launch X11, x11vnc, mate and noVNC from supervisor
+USER root
+ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
