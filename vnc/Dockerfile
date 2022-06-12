@@ -19,11 +19,11 @@ RUN paru -Syyy --noconfirm \
 
 
 # noVNC cooking
-# WORKDIR /opt/
-# RUN git clone https://github.com/kanaka/noVNC.git
+WORKDIR /opt/
+RUN git clone https://github.com/kanaka/noVNC.git
 # Avoid another checkout when launching noVnc
-# WORKDIR /opt/noVNC/utils/
-# RUN git clone https://github.com/kanaka/websockify
+WORKDIR /opt/noVNC/utils/
+RUN git clone https://github.com/kanaka/websockify
 
 # Comfort
 WORKDIR /var/log/supervisor/
@@ -34,8 +34,7 @@ ENV DISPLAY=:0.0
 COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 
 # Be sure that the noVNC port is exposed
-EXPOSE 8080
-EXPOSE 5900
+EXPOSE 5900 8080
 
 RUN ls /etc/supervisor.d
 
