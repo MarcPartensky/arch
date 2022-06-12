@@ -3,7 +3,8 @@ FROM marcpartensky/arch
 RUN paru -Syyy --noconfirm \
 	net-tools \
 	supervisor \
-    firefox \
+    firefox-nightly \
+    picom \
 	alacritty \
     xorg-xinit \
 	xorg-server \
