@@ -34,8 +34,8 @@ ENV DISPLAY=:0.0
 COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 
 # Be sure that the noVNC port is exposed
-EXPOSE 8083
-EXPOSE 5901
+EXPOSE 8080
+EXPOSE 5900
 
 RUN ls /etc/supervisor.d
 

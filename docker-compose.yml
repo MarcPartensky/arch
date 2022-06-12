@@ -26,8 +26,8 @@ services:
     build:
       context: vnc
     ports:
-      - "8083:8083"
-      - "15901:5901"
+      - "18080:8080"
+      - "15900:5900"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
