@@ -1,4 +1,4 @@
-FROM marcpartensky/arch
+FROM marcpartensky/arch:xorg
 MAINTAINER marcpartensky <marc.partensky@gmail.com>
 
 # Install packages
