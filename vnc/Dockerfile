@@ -18,6 +18,7 @@ RUN paru -Syyy --noconfirm \
 	xorg-server-xvfb
 
 
+USER root
 # noVNC cooking
 WORKDIR /opt/
 RUN git clone https://github.com/kanaka/noVNC.git
@@ -39,5 +40,4 @@ EXPOSE 5900 8080
 RUN ls /etc/supervisor.d
 
 # Launch X11, x11vnc, mate and noVNC from supervisor
-USER root
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
