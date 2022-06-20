@@ -1,12 +1,9 @@
-runafterbuild: build run
-run:
-	docker-compose run arch zsh
 base:
-	docker-compose build base
+	docker-compose run base
 xorg: base
-	docker-compose build xorg
+	docker-compose up xorg
 vnc: xorg
-	docker-compose build vnc
+	docker-compose up vnc
 parabola: base
 	docker-compose build parabola
 build: base xorg vnc parabola
