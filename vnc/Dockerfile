@@ -1,6 +1,8 @@
 FROM marcpartensky/arch:xorg
 LABEL maintainer=<marc.partensky@gmail.com>
 
+EXPOSE 5900 8080
+
 # Install packages
 RUN paru -Syyy --noconfirm \
 	net-tools \
@@ -26,7 +28,7 @@ ENV DISPLAY=:0.0
 COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 
 # Be sure that the noVNC port is exposed
-EXPOSE 5900 8080
+RUN ls wallpapers
 
 COPY entrypoint.sh entrypoint.sh
 
