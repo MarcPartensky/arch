@@ -6,6 +6,7 @@ RUN paru -Syyy --noconfirm \
 	net-tools \
 	supervisor \
 	alacritty \
+    feh \
 	x11vnc \
     novnc \
 	xorg-server \
