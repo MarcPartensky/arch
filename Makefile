@@ -2,7 +2,7 @@ base:
 	docker-compose run base
 xorg: base
 	docker-compose up xorg
-vnc: xorg
+vnc:
 	docker-compose up vnc
 parabola: base
 	docker-compose build parabola

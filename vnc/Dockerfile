@@ -1,5 +1,5 @@
 FROM marcpartensky/arch:xorg
-MAINTAINER marcpartensky <marc.partensky@gmail.com>
+LABEL maintainer=<marc.partensky@gmail.com>
 
 # Install packages
 RUN paru -Syyy --noconfirm \
