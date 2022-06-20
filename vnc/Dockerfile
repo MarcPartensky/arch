@@ -28,6 +28,8 @@ COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 EXPOSE 5900 8080
 
 RUN ls /etc/supervisor.d
+# RUN feh --bg-fill 
 
-# Launch X11, x11vnc, mate and noVNC from supervisor
-ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
+# Launch X11, x11vnc, dwm and noVNC from supervisor
+# ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
+ENTRYPOINT ["./entrypoint.sh"]
