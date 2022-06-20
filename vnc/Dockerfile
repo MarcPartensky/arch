@@ -3,12 +3,7 @@ LABEL maintainer=<marc.partensky@gmail.com>
 
 # Install packages
 RUN paru -Syyy --noconfirm \
-	# facter \
-	# enlightenment \
-	# mate-gtk3 \
 	net-tools \
-	# python \
-	# python3-numpy \
 	supervisor \
 	alacritty \
 	x11vnc \
