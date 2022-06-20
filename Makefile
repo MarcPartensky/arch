@@ -6,7 +6,10 @@ vnc:
 	docker-compose up vnc
 parabola: base
 	docker-compose build parabola
-build: base xorg vnc parabola
+buildall: base xorg vnc parabola
+
+build:
+	docker-compose build ${1}
 push: build
 	docker-compose push
 

@@ -20,6 +20,9 @@ RUN paru -Syyy --noconfirm \
 
 # Comfort
 WORKDIR /var/log/supervisor/
+USER root
+# RUN chown -R marc:marc /var/log/supervisor
+
 
 ENV DISPLAY=:0.0
 
