@@ -18,14 +18,6 @@ RUN paru -Syyy --noconfirm \
 	xorg-server-xvfb
 
 
-USER root
-# noVNC cooking
-WORKDIR /opt/
-RUN git clone https://github.com/kanaka/noVNC.git
-# Avoid another checkout when launching noVnc
-WORKDIR /opt/noVNC/utils/
-RUN git clone https://github.com/kanaka/websockify
-
 # Comfort
 WORKDIR /var/log/supervisor/
 
