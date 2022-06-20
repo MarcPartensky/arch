@@ -1,9 +1,9 @@
 base:
-	docker-compose run base
+	docker-compose --build run base
 xorg: base
-	docker-compose up xorg
+	docker-compose --build up xorg
 vnc:
-	docker-compose up vnc
+	docker-compose --build up vnc
 parabola: base
 	docker-compose build parabola
 buildall: base xorg vnc parabola
