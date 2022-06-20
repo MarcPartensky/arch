@@ -32,4 +32,4 @@ USER marc
 # setup wallpapers
 RUN git clone https://github.com/marcpartensky/wallpapers ~/wallpapers
 
-ENTRYPOINT [ "firefox-nightly" ]
+ENTRYPOINT [ "alacritty" ]
