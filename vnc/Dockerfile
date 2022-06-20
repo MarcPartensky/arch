@@ -27,8 +27,7 @@ COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 # Be sure that the noVNC port is exposed
 EXPOSE 5900 8080
 
-RUN ls /etc/supervisor.d
-# RUN feh --bg-fill 
+COPY entrypoint.sh entrypoint.sh
 
 # Launch X11, x11vnc, dwm and noVNC from supervisor
 # ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
