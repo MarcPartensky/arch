@@ -21,9 +21,9 @@ RUN paru -Syu --noconfirm \
     exa \
     bat \
     paruz \
+    make \
     nodejs \
     go \
-    make \
     openssh \
     podman \
     podman-compose
