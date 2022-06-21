@@ -1,6 +1,6 @@
 #!/sbin/zsh
 
-/usr/bin/supervisord -c /etc/supervisor.d/supervisord.ini &
+/usr/bin/supervisord -c /etc/supervisor.d/supervisord.ini
 # picom -b
-feh --bg-fill
+feh --bg-fill wallpapers/1.jpg
 alacritty
