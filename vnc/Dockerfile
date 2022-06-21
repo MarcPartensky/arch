@@ -18,12 +18,13 @@ RUN paru -Syyy --noconfirm \
     ttf-meslo-nerd-font-powerlevel10k \
 	xorg-server-xvfb
 
+USER root
+COPY crontab.txt /var/crontab.txt
+RUN crontab /var/crontab.txt
+RUN chmod 600 /etc/crontab
 
 USER marc
 COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 
-COPY crontab.txt /var/crontab.txt
-RUN crontab /var/crontab.txt
-RUN chmod 600 /etc/crontab
 
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
