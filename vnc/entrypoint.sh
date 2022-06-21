@@ -1,5 +1,4 @@
 #!/sbin/zsh
 
-
-eval "sleep 10 && .local/bin/wpp -n" &
+export WALLPAPERS_PATH=/home/marc/wallpapers
 /usr/bin/supervisord -c /etc/supervisor.d/supervisord.ini
