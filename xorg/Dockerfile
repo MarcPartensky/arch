@@ -5,13 +5,13 @@ RUN paru -Syyy --noconfirm \
 	supervisor \
     firefox \
     picom \
+    rofi \
     # ttf-menlo-powerline-git \
     # ttf-meslo \
     ttf-meslo-nerd-font-powerlevel10k \
 	alacritty \
     xorg-xinit \
 	xorg-server \
-    stow \
 	# xorg-server-utils \
 	xorg-server-xvfb
 
@@ -22,6 +22,7 @@ RUN paru -S --noconfirm libxft libxinerama
 # setup dwn
 RUN git clone https://github.com/marcpartensky/dwm git/dwm
 RUN sed -i 's/#define MODKEY Mod4Mask/#define MODKEY Mod1Mask/' git/dwm/config.h
+RUN sed -i 's/MODKEY,                       XK_d/MODKEY,                       XK_f/' git/dwm/config.h
 RUN make -C git/dwm
 USER root
 RUN make -C git/dwm install
