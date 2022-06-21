@@ -1,14 +1,21 @@
-base:
-	docker-compose up --build base
-xorg:
+base: buildbase
+	docker-compose up base
+xorg: buildxorg
+	docker-compose up xorg
+vnc: buildvnc
+	docker-compose up vnc
+parabola: buildparabola
+	docker-compose up parabola
+
+buildbase:
 	docker-compose build base
-	docker-compose up --build xorg
-vnc:
-	docker-compose build base xorg
-	docker-compose up --build vnc
-parabola: base
-	docker-compose build base xorg
-	docker-compose up --build parabola
+buildxorg: buildbase
+	docker-compose build xorg
+buildvnc: buildxorg
+	docker-compose build vnc
+buildparabola: buildbase
+	docker-compose build parabola
+
 buildall: base xorg vnc parabola
 
 build:
