@@ -21,6 +21,9 @@ RUN paru -S --noconfirm libxft libxinerama
 
 # setup dwn
 RUN git clone https://github.com/marcpartensky/dwm git/dwm
+RUN git -C git/dwm checkout -b nomodkey
+RUN sed -i 's/#define MODKEY Mod4Mask//' config.h
+RUN git -C git/dwm commit -m "no modkey"
 RUN make -C git/dwm
 USER root
 RUN make -C git/dwm install
@@ -28,7 +31,6 @@ USER marc
 
 # setup dwmblocks
 RUN git clone https://github.com/marcpartensky/dwmblocks git/dwmblocks
-RUN sed 's/#define MODKEY Mod4Mask//g'
 RUN make -C git/dwmblocks
 USER root
 RUN make -C git/dwmblocks install
