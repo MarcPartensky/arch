@@ -19,12 +19,11 @@ RUN paru -Syyy --noconfirm \
 	xorg-server-xvfb
 
 USER root
-COPY crontab.txt /var/crontab.txt
-RUN crontab /var/crontab.txt
-RUN chmod 600 /etc/crontab
+COPY crontab.txt /var/spool/cron/marc
+RUN chmod 600 /var/spool/cron/marc
 
 USER marc
 COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 
-
+USER root
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
