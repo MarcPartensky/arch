@@ -17,7 +17,7 @@ RUN paru -Syyy --noconfirm \
 	xorg-server-xvfb
 
 
-USER root
+USER marc
 COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 
 RUN ls wallpapers
