@@ -14,6 +14,7 @@ RUN paru -Syyy --noconfirm \
     novnc \
 	xorg-server \
 	# xorg-server-utils \
+    ttf-meslo-nerd-font-powerlevel10k \
 	xorg-server-xvfb
 
 
@@ -24,6 +25,4 @@ RUN ls wallpapers
 
 COPY entrypoint.sh entrypoint.sh
 
-# Launch X11, x11vnc, dwm and noVNC from supervisor
-# ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
