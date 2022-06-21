@@ -21,7 +21,7 @@ RUN paru -S --noconfirm libxft libxinerama
 
 # setup dwn
 RUN git clone https://github.com/marcpartensky/dwm git/dwm
-RUN sed -i 's/#define MODKEY Mod4Mask//' git/dwm/config.h
+RUN sed -i 's/#define MODKEY Mod4Mask/#define MODKEY Mod1Mask/' git/dwm/config.h
 RUN make -C git/dwm
 USER root
 RUN make -C git/dwm install
