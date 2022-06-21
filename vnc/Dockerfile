@@ -24,7 +24,6 @@ USER root
 
 ENV DISPLAY=:0.0
 
-# Prepare X11, x11vnc, mate and noVNC from supervisor
 COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 
 # Be sure that the noVNC port is exposed
