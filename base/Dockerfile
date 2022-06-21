@@ -40,7 +40,7 @@ RUN zsh git/dotfiles/main.sh
 RUN make -C git/dotfiles stow
 
 RUN git clone https://github.com/marcpartensky/nvim ~/.config/nvim
-RUN make -C ~/.config/nvim
+RUN make -C ~/.config/nvim setup
 
 EXPOSE 22
 ENTRYPOINT [ "/tmp/entrypoint.sh" ]
