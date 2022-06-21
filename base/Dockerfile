@@ -22,6 +22,7 @@ ENV HOST docker
 WORKDIR /home/marc
 RUN mkdir git
 RUN git clone https://github.com/marcpartensky/dotfiles git/dotfiles
+RUN zsh git/dotfiles/main.sh
 RUN make -C git/dotfiles stow
 
 EXPOSE 22
