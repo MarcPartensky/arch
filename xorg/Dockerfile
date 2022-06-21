@@ -28,6 +28,7 @@ USER marc
 
 # setup dwmblocks
 RUN git clone https://github.com/marcpartensky/dwmblocks git/dwmblocks
+RUN sed 's/#define MODKEY Mod4Mask//g'
 RUN make -C git/dwmblocks
 USER root
 RUN make -C git/dwmblocks install
