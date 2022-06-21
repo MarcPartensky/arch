@@ -12,6 +12,7 @@ RUN paru -Syyy --noconfirm \
     feh \
 	x11vnc \
     novnc \
+    cron \
 	xorg-server \
 	# xorg-server-utils \
     ttf-meslo-nerd-font-powerlevel10k \
@@ -20,5 +21,9 @@ RUN paru -Syyy --noconfirm \
 
 USER marc
 COPY supervisord.ini /etc/supervisor.d/supervisord.ini
+
+COPY crontab.txt /var/crontab.txt
+RUN crontab /var/crontab.txt
+RUN chmod 600 /etc/crontab
 
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
