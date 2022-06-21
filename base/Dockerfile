@@ -25,8 +25,8 @@ RUN paru -Syu --noconfirm \
     go \
     make \
     openssh \
-    docker \
-    docker-compose
+    podman \
+    podman-compose
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 
