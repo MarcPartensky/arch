@@ -5,11 +5,13 @@ RUN paru -Syyy --noconfirm \
 	supervisor \
     firefox \
     picom \
-    ttf-menlo-powerline-git \
-    ttf-meslo \
+    # ttf-menlo-powerline-git \
+    # ttf-meslo \
+    ttf-meslo-nerd-font-powerlevel10k \
 	alacritty \
     xorg-xinit \
 	xorg-server \
+    stow \
 	# xorg-server-utils \
 	xorg-server-xvfb
 
