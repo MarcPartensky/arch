@@ -14,16 +14,33 @@ RUN git clone https://aur.archlinux.org/paru.git
 WORKDIR /tmp/paru
 RUN makepkg -si --noconfirm
 
-RUN paru -Syu --noconfirm zsh neovim stow exa bat paruz openssh docker docker-compose
+RUN paru -Syu --noconfirm \
+    zsh \
+    neovim \
+    stow \
+    exa \
+    bat \
+    paruz \
+    nodejs \
+    golang \
+    make \
+    openssh \
+    docker \
+    docker-compose
+
 COPY entrypoint.sh /tmp/entrypoint.sh
 
 ENV HOST docker
 
 WORKDIR /home/marc
 RUN mkdir git
+
 RUN git clone https://github.com/marcpartensky/dotfiles git/dotfiles
 RUN zsh git/dotfiles/main.sh
 RUN make -C git/dotfiles stow
+
+RUN git clone https://github.com/marcpartensky/nvim ~/.config/nvim
+RUN make -C ~/.config/nvim
 
 EXPOSE 22
 ENTRYPOINT [ "/tmp/entrypoint.sh" ]
