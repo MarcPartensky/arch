@@ -22,7 +22,7 @@ RUN paru -Syu --noconfirm \
     bat \
     paruz \
     make \
-    nodejs \
+    npm \
     go \
     openssh \
     podman \
