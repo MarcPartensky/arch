@@ -14,7 +14,7 @@ RUN git clone https://aur.archlinux.org/paru.git
 WORKDIR /tmp/paru
 RUN makepkg -si --noconfirm
 
-RUN paru -Syu --noconfirm zsh neovim docker docker-compose openssh exa bat
+RUN paru -Syu --noconfirm zsh neovim docker docker-compose openssh exa bat paruz
 COPY entrypoint.sh /tmp/entrypoint.sh
 
 ENV HOST docker
