@@ -38,6 +38,7 @@ RUN mkdir git
 RUN git clone https://github.com/marcpartensky/dotfiles git/dotfiles
 RUN zsh git/dotfiles/main.sh
 RUN make -C git/dotfiles stow
+RUN touch .profile
 
 RUN git clone https://github.com/marcpartensky/nvim ~/.config/nvim
 RUN make -C ~/.config/nvim setup
