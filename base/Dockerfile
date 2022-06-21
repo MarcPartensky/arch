@@ -22,7 +22,7 @@ ENV HOST docker
 WORKDIR /home/marc
 RUN mkdir git
 RUN git clone https://github.com/marcpartensky/dotfiles git/dotfiles
-RUN make -c git/dotfiles stow
+RUN make -C git/dotfiles stow
 
 EXPOSE 22
 ENTRYPOINT [ "/tmp/entrypoint.sh" ]
