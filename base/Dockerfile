@@ -22,7 +22,7 @@ RUN paru -Syu --noconfirm \
     bat \
     paruz \
     nodejs \
-    golang \
+    go \
     make \
     openssh \
     docker \
