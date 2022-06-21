@@ -21,8 +21,4 @@ RUN paru -Syyy --noconfirm \
 USER marc
 COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 
-RUN ls wallpapers
-
-COPY entrypoint.sh entrypoint.sh
-
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
