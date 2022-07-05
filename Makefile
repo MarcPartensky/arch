@@ -18,9 +18,7 @@ buildparabola: buildbase
 
 buildall: base xorg vnc parabola
 
-build:
-	docker-compose build ${1}
-push: build
+push: buildall
 	docker-compose push
 
 .PHONY: base xorg vnc parabola
