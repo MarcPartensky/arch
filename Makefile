@@ -16,7 +16,7 @@ buildvnc: buildxorg
 buildparabola: buildbase
 	docker-compose build parabola
 
-buildall: base xorg vnc parabola
+buildall: buildbase buildxorg buildvnc buildparabola
 
 push: buildall
 	docker-compose push
