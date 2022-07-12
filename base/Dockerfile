@@ -26,11 +26,18 @@ RUN paru -Syu --noconfirm \
     go \
     openssh \
     podman \
-    podman-compose
+    podman-compose \
+    locales
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 
 ENV HOST docker
+
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/' /etc/locale.gen && \
+    locale-gen
+ENV LC_ALL fr_FR.UTF-8
+ENV LANG fr_FR.UTF-8
+ENV LANGUAGE fr_FR:fr
 
 WORKDIR /home/marc
 RUN mkdir git
