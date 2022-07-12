@@ -26,8 +26,7 @@ RUN paru -Syu --noconfirm \
     go \
     openssh \
     podman \
-    podman-compose \
-    locales
+    podman-compose
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 
