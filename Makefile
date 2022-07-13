@@ -1,5 +1,5 @@
 base: buildbase
-	docker-compose run -it base
+	docker-compose run base
 xorg: buildxorg
 	docker-compose up xorg
 vnc: buildvnc
