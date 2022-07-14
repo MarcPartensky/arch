@@ -1,11 +1,6 @@
 FROM archlinux:latest
 LABEL maintainer="Marc Partensky"
 
-RUN sed -i -e 's/# en_US.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/' /etc/locale.gen && \
-    locale-gen
-ENV LC_ALL fr_FR.UTF-8
-ENV LANG fr_FR.UTF-8
-ENV LANGUAGE fr_FR:fr
 
 RUN pacman -Syyyu --needed --noconfirm base-devel
 RUN pacman -S --noconfirm git
@@ -36,8 +31,18 @@ RUN paru -Syu --noconfirm \
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 
-ENV HOST docker
+USER root
+RUN cat /etc/locale.gen
+# RUN sed -i -e 's/en_US.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/' /etc/locale.gen
+# RUN cat /etc/locale.gen
+# RUN locale-gen
+# RUN cat /etc/locale.gen
+ENV LC_ALL fr_FR.UTF-8
+ENV LANG fr_FR.UTF-8
+ENV LANGUAGE fr_FR:fr
 
+USER marc
+ENV HOST docker
 
 WORKDIR /home/marc
 RUN mkdir git
