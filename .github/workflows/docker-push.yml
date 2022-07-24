@@ -27,13 +27,13 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
     - name: build base
-      run: make base
+      run: make buildbase
     - name: build xorg
-      run: make xorg
+      run: make buildxorg
     - name: build vnc
-      run: make vnc
+      run: make buildvnc
     - name: build parabola
-      run: make parabola
+      run: make buildparabola
     # - name: build all
     #   run: make buildall
     - name: Login to DockerHub
