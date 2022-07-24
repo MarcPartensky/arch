@@ -18,6 +18,13 @@ buildparabola: buildbase
 
 buildall: buildbase buildxorg buildvnc buildparabola
 
+updateall:
+	docker-compose build --no-cache
+	# docker-compose build --no-cache xorg
+	# docker-compose build --no-cache vnc
+	# docker-compose build --no-cache parabola
+	docker-compose push
+
 push: buildall
 	docker-compose push
 
