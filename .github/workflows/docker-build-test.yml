@@ -1,0 +1,39 @@
+name: Docker
+
+on:
+  schedule:
+  - cron: "0 4 * * *" # everyday at 4 am
+  push:
+    branches:
+      - '*'         # matches every branch that doesn't contain a '/'
+      - '*/*'       # matches every branch containing a single '/'
+      - '**'        # matches every branch
+      - '!master'   # excludes master
+    # Publish `v1.2.3` tags as releases.
+    tags:
+      - v*
+
+  # Run tests for any PRs.
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Update apt
+      run: sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+    - name: Install make
+      run: sudo apt install make docker-compose -y
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v1
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+    - name: build base
+      run: make buildbase
+    - name: build xorg
+      run: make buildxorg
+    - name: build vnc
+      run: make buildvnc
+    - name: build parabola
+      run: make buildparabola
