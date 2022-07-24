@@ -9,6 +9,7 @@ RUN paru -Syyy --noconfirm \
 	net-tools \
 	supervisor \
 	alacritty \
+    ly \
     feh \
 	x11vnc \
     novnc \
