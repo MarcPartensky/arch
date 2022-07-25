@@ -42,4 +42,6 @@ RUN git clone https://github.com/marcpartensky/wallpapers wallpapers
 RUN git clone https://github.com/marcpartensky/shell git/shell
 RUN make -C git/shell
 
-ENTRYPOINT [ "alacritty" ]
+USER root
+COPY entrypoint.sh entrypoint.sh
+ENTRYPOINT [ "./entrypoint.sh" ]
