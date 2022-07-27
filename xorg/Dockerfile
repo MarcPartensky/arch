@@ -13,7 +13,8 @@ RUN paru -Syyy --noconfirm \
     xorg-xinit \
 	xorg-server \
 	# xorg-server-utils \
-	xorg-server-xvfb
+	# xorg-server-xvfb \
+    xorg-server-xephyr
 
 
 # dwm build dependencies
