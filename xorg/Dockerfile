@@ -4,22 +4,22 @@ RUN paru -Syyy --noconfirm \
 	net-tools \
 	supervisor \
     firefox \
+	alacritty \
     picom \
     rofi \
     feh \
+    ttf-meslo-nerd-font-powerlevel10k \
+    # for nested x
+    xorg-server-xephyr \
+    # dwm build dependencies
+    libxft \
+    libxinerama
     # ttf-menlo-powerline-git \
     # ttf-meslo \
-    ttf-meslo-nerd-font-powerlevel10k \
-	alacritty \
-    xorg-xinit \
-	xorg-server \
+    # xorg-xinit \
+	# xorg-server \
 	# xorg-server-utils \
 	# xorg-server-xvfb \
-    xorg-server-xephyr
-
-
-# dwm build dependencies
-RUN paru -S --noconfirm libxft libxinerama
 
 # setup dwn
 RUN git clone https://github.com/marcpartensky/dwm git/dwm

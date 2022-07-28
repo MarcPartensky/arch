@@ -7,13 +7,10 @@ ENV DISPLAY=:0.0
 
 # Install packages
 RUN paru -Syyy --noconfirm \
-	net-tools \
-	supervisor \
-	alacritty \
 	x11vnc \
     novnc \
     cron \
-	xorg-server \
+	# xorg-server \
 	# xorg-server-utils \
     ttf-meslo-nerd-font-powerlevel10k \
 	xorg-server-xvfb
