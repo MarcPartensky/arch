@@ -1,6 +1,7 @@
 FROM marcpartensky/arch:xorg
 LABEL maintainer=<marc.partensky@gmail.com>
 
+USER marc
 EXPOSE 5900 8080
 ENV DISPLAY=:0.0
 
