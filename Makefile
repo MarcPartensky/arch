@@ -19,6 +19,7 @@ buildparabola: buildbase
 buildall: buildbase buildxorg buildvnc buildparabola
 
 updateall:
+	docker pull archlinux
 	docker-compose build --no-cache
 	# docker-compose build --no-cache xorg
 	# docker-compose build --no-cache vnc
