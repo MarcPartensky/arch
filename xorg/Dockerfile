@@ -6,6 +6,7 @@ RUN paru -Syyy --noconfirm \
     firefox \
     picom \
     rofi \
+    feh \
     # ttf-menlo-powerline-git \
     # ttf-meslo \
     ttf-meslo-nerd-font-powerlevel10k \
