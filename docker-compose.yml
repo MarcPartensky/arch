@@ -15,11 +15,17 @@ services:
     build:
       context: xorg
     environment:
-      DISPLAY: $DISPLAY
+      DISPLAY: :1
+        # ipc: host
+        # privileged: true
+    user: $USER
+      # pid: host
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
-    devices:
-      - /dev/dri
+      - /tmp/.X1-lock:/tmp/.X1-lock
+      # - /tmp:/tmp
+      # devices:
+      # - /dev/dri
 
   vnc:
     image: marcpartensky/arch:vnc

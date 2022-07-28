@@ -45,4 +45,6 @@ RUN make -C git/shell
 
 USER root
 COPY entrypoint.sh entrypoint.sh
+COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 ENTRYPOINT [ "./entrypoint.sh" ]
+# ENTRYPOINT [ "DISPLAY=:0", "Xephyr", ":1" ]
