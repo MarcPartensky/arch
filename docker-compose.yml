@@ -26,6 +26,8 @@ services:
       # - /tmp:/tmp
       # devices:
       # - /dev/dri
+      - /var/cache/pacman/pkg:/var/cache/pacman/pkg
+      - arch_home:/home/marc
 
   vnc:
     image: marcpartensky/arch:vnc
@@ -35,9 +37,15 @@ services:
       - "18080:8080"
       - "15900:5900"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      # - /var/run/docker.sock:/var/run/docker.sock
+      - /var/cache/pacman/pkg:/var/cache/pacman/pkg
+      - arch_home:/home/marc
 
   parabola:
     image: marcpartensky/arch:parabola
     build:
       context: parabola
+
+volumes:
+  arch_home:
+
