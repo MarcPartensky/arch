@@ -23,6 +23,7 @@ USER marc
 COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 
 USER root
-COPY entrypoint.sh /root/entrypoint.sh
-ENTRYPOINT [ "/root/entrypoint.sh" ]
+RUN pwd
+COPY entrypoint.sh entrypoint.sh
+ENTRYPOINT [ "./entrypoint.sh" ]
 # ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
