@@ -45,7 +45,7 @@ RUN git clone https://github.com/marcpartensky/shell git/shell
 RUN make -C git/shell
 
 USER root
-COPY entrypoint.sh entrypoint.sh
 COPY supervisord.ini /etc/supervisor.d/supervisord.ini
+COPY entrypoint.sh entrypoint.sh
 ENTRYPOINT [ "./entrypoint.sh" ]
 # ENTRYPOINT [ "DISPLAY=:0", "Xephyr", ":1" ]
