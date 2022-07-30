@@ -25,6 +25,6 @@ COPY supervisord.ini /etc/supervisor.d/supervisord.ini
 USER root
 RUN pwd
 RUN ls
-COPY entrypoint.sh entrypoint.sh
-ENTRYPOINT [ "./entrypoint.sh" ]
+COPY entrypoint.sh /root/entrypoint.sh
+ENTRYPOINT [ "/root/entrypoint.sh" ]
 # ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
