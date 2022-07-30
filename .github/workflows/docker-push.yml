@@ -14,7 +14,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  base:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -42,7 +42,7 @@ jobs:
     #     push: true
     #     tags: marcpartensky/arch:latest
 
-  build:
+  xorg:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -64,7 +64,7 @@ jobs:
     - name: push
       run: make push
 
-  build:
+  vnc:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -86,7 +86,7 @@ jobs:
     - name: push
       run: make push
 
-  build:
+  parabola:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
