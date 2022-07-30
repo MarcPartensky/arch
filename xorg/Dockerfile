@@ -1,6 +1,6 @@
 FROM marcpartensky/arch
 
-RUN paru -Syyy --noconfirm \
+RUN paru -Syyyu --noconfirm \
 	net-tools \
 	supervisor \
     firefox \

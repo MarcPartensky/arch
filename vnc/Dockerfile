@@ -6,7 +6,7 @@ EXPOSE 5900 8080
 ENV DISPLAY=:0.0
 
 # Install packages
-RUN paru -Syyy --noconfirm \
+RUN paru -Syyyu --noconfirm \
 	x11vnc \
     novnc \
     cron \
