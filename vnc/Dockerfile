@@ -13,7 +13,8 @@ RUN paru -Syyyu --noconfirm \
 	# xorg-server \
 	# xorg-server-utils \
     ttf-meslo-nerd-font-powerlevel10k \
-	xorg-server-xvfb
+	# xorg-server-xvfb
+    xf86-video-dummy
 
 USER root
 COPY crontab.txt /var/spool/cron/marc
