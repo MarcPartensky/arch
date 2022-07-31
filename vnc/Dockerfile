@@ -21,10 +21,6 @@ COPY crontab.txt /var/spool/cron/marc
 RUN chmod 600 /var/spool/cron/marc
 
 USER marc
-COPY supervisord.conf /home/marc
-COPY entrypoint.sh /home/marc/entrypoint.sh
-RUN cat /home/marc/entrypoint.sh
-RUN pwd
-RUN ls
-ENTRYPOINT [ "sh", "./entrypoint.sh" ]
+COPY supervisord.conf entrypoint.sh /opt/arch
+ENTRYPOINT [ "/opt/arch/entrypoint.sh" ]
 # ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
