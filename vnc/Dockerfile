@@ -23,5 +23,8 @@ RUN chmod 600 /var/spool/cron/marc
 USER marc
 COPY supervisord.conf /home/marc
 COPY entrypoint.sh /home/marc/entrypoint.sh
-ENTRYPOINT [ "/home/marc/entrypoint.sh" ]
+RUN cat /home/marc/entrypoint.sh
+RUN pwd
+RUN ls
+ENTRYPOINT [ "sh", "./entrypoint.sh" ]
 # ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
