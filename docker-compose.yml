@@ -33,13 +33,14 @@ services:
     image: marcpartensky/arch:vnc
     build:
       context: vnc
+    # user: $USER
     ports:
       - "18080:8080"
       - "15900:5900"
     volumes:
       # - /var/run/docker.sock:/var/run/docker.sock
       - arch_pacman:/var/cache/pacman/pkg
-      - /srv/arch/home/marc:/home/marc
+      - arch_home:/home/marc
 
   parabola:
     image: marcpartensky/arch:parabola
