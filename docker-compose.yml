@@ -49,3 +49,4 @@ services:
 
 volumes:
   arch_pacman:
+  arch_home:
