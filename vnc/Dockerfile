@@ -7,14 +7,14 @@ ENV DISPLAY=:0.0
 
 # Install packages
 RUN paru -Syyyu --noconfirm \
+	xorg-server \ # required for xdummy
+    # xorg-server-utils \
+	# xorg-server-xvfb \
+    xf86-video-dummy \
 	x11vnc \
     novnc \
     cron \
-	xorg-server \
-	# xorg-server-utils \
-    ttf-meslo-nerd-font-powerlevel10k \
-	# xorg-server-xvfb
-    xf86-video-dummy
+    ttf-meslo-nerd-font-powerlevel10k
 
 USER root
 COPY crontab.txt /var/spool/cron/marc
