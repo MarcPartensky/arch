@@ -10,8 +10,8 @@ RUN paru -Syyyu --noconfirm \
     # xorg-server required for xdummy
 	xorg-server \
     # xorg-server-utils \
-	# xorg-server-xvfb \
-    xf86-video-dummy \
+	xorg-server-xvfb \
+    # xf86-video-dummy \
 	x11vnc \
     novnc \
     cron \
