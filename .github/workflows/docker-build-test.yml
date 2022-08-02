@@ -25,13 +25,13 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         context: base
-        tags: myimage:latest
+        tags: marcpartensky/arch:base
         outputs: type=docker,dest=/tmp/base.tar
 
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: marcpartensky/arch:base
+        name: base
         path: /tmp/base.tar
 
   xorg:
@@ -62,7 +62,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: marcpartensky/arch:xorg
+        name: xorg
         path: /tmp/xorg.tar
 
   vnc:
@@ -93,7 +93,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: marcpartensky/arch:vnc
+        name: vnc
         path: /tmp/vnc.tar
 
   parabola:
@@ -124,5 +124,5 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: marcpartensky/arch:parabola
+        name: parabola
         path: /tmp/parabola.tar
