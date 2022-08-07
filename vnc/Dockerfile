@@ -12,7 +12,7 @@ RUN paru -Syyyu --noconfirm \
     # xorg-server-utils \
 	xorg-server-xvfb \
     # xf86-video-dummy \
-	x11vnc \
+	tigervnc \
     novnc \
     cron \
     ttf-meslo-nerd-font-powerlevel10k
