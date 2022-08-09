@@ -2,7 +2,8 @@ FROM marcpartensky/arch:vnc
 LABEL maintainer=<marc.partensky@gmail.com>
 
 RUN paru -Syyyu --noconfirm \
-    hyprland-bin
+    hyprland-bin \
+    waybar
 
 USER root
 COPY crontab.txt /var/spool/cron/marc
