@@ -42,6 +42,19 @@ services:
       - arch_pacman:/var/cache/pacman/pkg
       - arch_home:/home/marc
 
+  waylandvnc:
+    image: marcpartensky/arch:waylandvnc
+    build:
+      context: waylandvnc
+    # user: $USER
+    ports:
+      - "18080:8080"
+      - "15900:5900"
+    volumes:
+      # - /var/run/docker.sock:/var/run/docker.sock
+      - arch_pacman:/var/cache/pacman/pkg
+      - arch_home:/home/marc
+
   parabola:
     image: marcpartensky/arch:parabola
     build:
