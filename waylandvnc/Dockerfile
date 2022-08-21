@@ -1,11 +1,13 @@
-FROM marcpartensky/arch:vnc
+FROM marcpartensky/arch:waylandvnc
 LABEL maintainer=<marc.partensky@gmail.com>
 
 RUN paru -Syyyu --noconfirm \
     hyprland-bin \
     hyprpaper-git \
     waybar \
-    grim
+    grim \
+    wf-recorder \
+    swappy
 
 USER root
 COPY crontab.txt /var/spool/cron/marc
