@@ -47,6 +47,14 @@ services:
     build:
       context: parabola
 
+  openrc:
+    image: marcpartensky/arch:openrc
+    build:
+      context: openrc
+    ports:
+      - "18080:8080"
+      - "15900:5900"
+
 volumes:
   arch_pacman:
   arch_home:
