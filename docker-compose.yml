@@ -10,6 +10,11 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
+  artix:
+    image: marcpartensky/artix
+    build:
+      context: artix
+
   xorg:
     image: marcpartensky/arch:xorg
     build:
