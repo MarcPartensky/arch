@@ -4,10 +4,13 @@ LABEL maintainer=<marc.partensky@gmail.com>
 RUN paru -Syyyu --noconfirm \
     hyprland-bin \
     hyprpaper-git \
+    wayvnc \
     waybar \
     grim \
     wf-recorder \
     swappy
+
+# waysct, wpaperd
 
 USER root
 COPY crontab.txt /var/spool/cron/marc
