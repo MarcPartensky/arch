@@ -24,10 +24,7 @@ RUN paru -Syu --noconfirm \
     paruz \
     make \
     npm \
-    go \
-    openssh \
-    podman \
-    podman-compose
+    go
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 
