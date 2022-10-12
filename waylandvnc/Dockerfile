@@ -6,12 +6,13 @@ RUN paru -Syyyu --noconfirm \
     hyprland-bin \
     hyprpaper-git \
     wayvnc \
-    waysct \
     waybar \
     wpaperd \
     grim \
     wf-recorder \
     swappy
+
+RUN go get -u github.com/d4l3k/go-sct/cmd/waysct
 
 # waysct, wpaperd
 
