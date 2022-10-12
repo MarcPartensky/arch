@@ -6,6 +6,8 @@ vnc: buildvnc
 	docker-compose up vnc
 parabola: buildparabola
 	docker-compose up parabola
+waylandvnc: buildwaylandvnc
+	docker-compose up waylandvnc
 
 buildbase:
 	docker-compose build base
@@ -15,6 +17,8 @@ buildvnc: buildxorg
 	docker-compose build vnc
 buildparabola: buildbase
 	docker-compose build parabola
+buildwaylandvnc: buildxorg
+	docker-compose build waylandvnc
 
 buildall: buildbase buildxorg buildvnc buildparabola
 
@@ -24,9 +28,10 @@ updateall:
 	docker-compose build --no-cache xorg
 	docker-compose build --no-cache vnc
 	docker-compose build --no-cache parabola
+	docker-compose build --no-cache waylandvnc
 	docker-compose push
 
 push: buildall
 	docker-compose push
 
-.PHONY: base xorg vnc parabola
+.PHONY: base xorg vnc parabola waylandvnc
