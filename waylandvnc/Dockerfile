@@ -5,7 +5,9 @@ RUN paru -Syyyu --noconfirm \
     hyprland-bin \
     hyprpaper-git \
     wayvnc \
+    waysct \
     waybar \
+    wpaperd \
     grim \
     wf-recorder \
     swappy
