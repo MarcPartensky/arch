@@ -12,6 +12,7 @@ RUN paru -Syyyu --noconfirm \
     wf-recorder \
     swappy
 
+RUN go env -w GO111MODULE=off
 RUN go get -u github.com/d4l3k/go-sct/cmd/waysct
 
 # waysct, wpaperd
