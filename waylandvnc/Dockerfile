@@ -1,6 +1,7 @@
 FROM marcpartensky/arch:xorg
 LABEL maintainer=<marc.partensky@gmail.com>
 
+USER marc
 RUN paru -Syyyu --noconfirm \
     hyprland-bin \
     hyprpaper-git \
