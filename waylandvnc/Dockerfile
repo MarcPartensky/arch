@@ -1,4 +1,4 @@
-FROM marcpartensky/arch:waylandvnc
+FROM marcpartensky/arch:xorg
 LABEL maintainer=<marc.partensky@gmail.com>
 
 RUN paru -Syyyu --noconfirm \
