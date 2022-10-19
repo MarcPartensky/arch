@@ -6,6 +6,8 @@ vnc: buildvnc
 	docker-compose up vnc
 parabola: buildparabola
 	docker-compose up parabola
+artix: buildartix
+	docker-compose up artix
 
 buildbase:
 	docker-compose build base
@@ -15,6 +17,8 @@ buildvnc: buildxorg
 	docker-compose build vnc
 buildparabola: buildbase
 	docker-compose build parabola
+buildartix:
+	docker-compose build artix
 
 buildall: buildbase buildxorg buildvnc buildparabola
 
