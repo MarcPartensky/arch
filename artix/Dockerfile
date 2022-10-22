@@ -15,16 +15,20 @@ RUN git clone https://aur.archlinux.org/paru.git
 WORKDIR /tmp/paru
 RUN makepkg -si --noconfirm
 
-RUN paru -Syu --noconfirm \
+RUN paru -Syyyu --noconfirm \
     zsh \
     neovim \
-    stow \
     exa \
-    bat \
     paruz \
     make \
     npm \
-    go
+    go \
+    pod2man \
+    openssh \
+    stow-git
+
+# RUN paru -aS --noconfirm \
+#     bat
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 
