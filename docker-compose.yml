@@ -50,8 +50,12 @@ services:
     ports:
       - "18080:8080"
       - "15900:5900"
+    tmpfs:
+      - /tmp
+      - /run
     volumes:
       # - /var/run/docker.sock:/var/run/docker.sock
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
       - arch_pacman:/var/cache/pacman/pkg
       - arch_home:/home/marc
 
