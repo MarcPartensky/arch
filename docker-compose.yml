@@ -14,6 +14,13 @@ services:
     image: marcpartensky/artix
     build:
       context: artix
+    tmpfs:
+      - /tmp
+      - /run
+    volumes:
+      # - /var/run/docker.sock:/var/run/docker.sock
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+
 
   xorg:
     image: marcpartensky/arch:xorg
