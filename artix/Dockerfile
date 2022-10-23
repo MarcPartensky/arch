@@ -56,4 +56,5 @@ RUN touch .profile
 RUN git clone https://github.com/marcpartensky/nvim ~/.config/nvim
 RUN make -C ~/.config/nvim setup
 
+USER root
 # ENTRYPOINT [ "/tmp/entrypoint.sh" ]
