@@ -25,6 +25,8 @@ RUN paru -Syyyu --noconfirm \
     go \
     pod2man \
     openssh \
+    seatd \
+    hyprland \
     stow-git
 
 # RUN paru -aS --noconfirm \
@@ -44,6 +46,7 @@ ENV LANGUAGE fr_FR:fr
 
 USER marc
 ENV HOST docker
+ENV XDG_RUNTIME_DIR=/run/user/1000
 
 WORKDIR /home/marc
 RUN mkdir git
