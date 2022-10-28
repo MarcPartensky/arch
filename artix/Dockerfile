@@ -15,6 +15,8 @@ RUN git clone https://aur.archlinux.org/paru.git
 WORKDIR /tmp/paru
 RUN makepkg -si --noconfirm
 
+# RUN paru -Rc --noconfirm elogind-openrc
+
 RUN paru -Syyyu --noconfirm \
     zsh \
     neovim \
@@ -25,7 +27,6 @@ RUN paru -Syyyu --noconfirm \
     go \
     pod2man \
     openssh \
-    seatd-openrc \
     hyprland \
     stow-git
 
@@ -47,6 +48,8 @@ ENV LANGUAGE fr_FR:fr
 USER marc
 ENV HOST docker
 ENV XDG_RUNTIME_DIR=/run/user/1000
+ENV LIBSEAT_BACKEND=logind
+ENV WLR_DRM_DEVICES=/dev/dri/card0
 
 WORKDIR /home/marc
 RUN mkdir git
