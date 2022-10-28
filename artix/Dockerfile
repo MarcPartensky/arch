@@ -46,14 +46,6 @@ ENV LANG fr_FR.UTF-8
 ENV LANGUAGE fr_FR:fr
 
 USER marc
-# ENV WLR_DRM_DEVICES=/dev/dri/card0
-ENV WLR_BACKENDS=headless
-ENV WLR_RENDERER=pixman
-ENV WLR_LIBINPUT_NO_DEVICES=1
-ENV WAYLAND_DISPLAY=wayland-1
-ENV LIBSEAT_BACKEND=logind
-ENV XDG_RUNTIME_DIR=/tmp
-ENV XDG_SESSION_TYPE=wayland
 
 WORKDIR /home/marc
 RUN mkdir git
@@ -65,6 +57,15 @@ RUN touch .profile
 
 RUN git clone https://github.com/marcpartensky/nvim ~/.config/nvim
 RUN make -C ~/.config/nvim setup
+
+# ENV WLR_DRM_DEVICES=/dev/dri/card0
+ENV WLR_BACKENDS=headless
+ENV WLR_RENDERER=pixman
+ENV WLR_LIBINPUT_NO_DEVICES=1
+ENV WAYLAND_DISPLAY=wayland-1
+ENV LIBSEAT_BACKEND=logind
+ENV XDG_RUNTIME_DIR=/tmp
+ENV XDG_SESSION_TYPE=wayland
 
 USER root
 # ENTRYPOINT [ "/tmp/entrypoint.sh" ]
