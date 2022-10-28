@@ -49,7 +49,10 @@ USER marc
 ENV HOST docker
 ENV XDG_RUNTIME_DIR=/run/user/1000
 ENV LIBSEAT_BACKEND=logind
-ENV WLR_DRM_DEVICES=/dev/dri/card0
+# ENV WLR_DRM_DEVICES=/dev/dri/card0
+ENV WLR_BACKENDS=headless
+ENV WLR_RENDERER=pixman
+ENV WLR_LIBINPUT_NO_DEVICES=1
 
 WORKDIR /home/marc
 RUN mkdir git
