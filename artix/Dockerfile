@@ -25,7 +25,7 @@ RUN paru -Syyyu --noconfirm \
     go \
     pod2man \
     openssh \
-    seatd \
+    seatd-openrc \
     hyprland \
     stow-git
 
