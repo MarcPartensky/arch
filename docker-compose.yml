@@ -19,7 +19,8 @@ services:
       - /run
     volumes:
       # - /var/run/docker.sock:/var/run/docker.sock
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      # - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /dev/dri:/dev/dri
 
 
   xorg:
