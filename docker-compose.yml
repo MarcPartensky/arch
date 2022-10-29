@@ -17,17 +17,17 @@ services:
     tmpfs:
       - /tmp
       - /run
-    # volumes:
+    volumes:
       # - /var/run/docker.sock:/var/run/docker.sock
       # - /sys/fs/cgroup:/sys/fs/cgroup:ro
-      # - /dev/dri:/dev/dri
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: amd
-              count: 1
-              capabilities: [gpu]
+      - /dev/dri:/dev/dri
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: bochs-drm
+    #           count: 1
+    #           capabilities: [gpu]
 
   xorg:
     image: marcpartensky/arch:xorg
