@@ -67,13 +67,16 @@ ENV XDG_RUNTIME_DIR=/tmp
 ENV XDG_SESSION_TYPE=wayland
 
 RUN paru -Syyyu --noconfirm \
-    hyprland \
-    wayvnc \
-    wpaperd \
-    waysct \
     alacritty \
     firefox \
     nautilus
+
+RUN paru -Syyyu --noconfirm \
+    hyprland \
+    wayvnc \
+    wpaperd \
+    # waysct
+
 
 USER root
 # ENTRYPOINT [ "/tmp/entrypoint.sh" ]
